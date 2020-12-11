@@ -1,0 +1,8 @@
+#Define the language used by Travis CI
+language: java
+jdk:
+  - oracle14jdk
+
+cache:
+  directories:
+    - $HOME/.m2
