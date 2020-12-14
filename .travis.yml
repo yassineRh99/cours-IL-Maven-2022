@@ -1,7 +1,7 @@
 #Define the language used by Travis CI
 language: java
 jdk:
-  - oracle14jdk
+  - openjdk11
 
 cache:
   directories:
