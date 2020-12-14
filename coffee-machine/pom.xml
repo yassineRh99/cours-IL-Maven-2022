@@ -4,9 +4,22 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
+    <!--
+    Le tag group id n'est pas obligatoire ici car le groupId est déjà défini par le parent
     <groupId>fr.imt.cours.IL-Maven-2020</groupId>
+    -->
     <artifactId>coffee-machine</artifactId>
     <version>1.0-SNAPSHOT</version>
+
+    <parent>
+        <groupId>fr.imt.cours.IL-Maven-2020</groupId>
+        <artifactId>Main-pom</artifactId>
+        <version>1.0-SNAPSHOT</version>
+    </parent>
+
+    <properties>
+        <cucumber.version>6.9.0</cucumber.version>
+    </properties>
 
     <build>
         <plugins>
@@ -15,8 +28,8 @@
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
                 <configuration>
-                    <source>14</source>
-                    <target>14</target>
+                    <source>11</source>
+                    <target>11</target>
                 </configuration>
             </plugin>
             <!-- Plugin To run unit test -->
@@ -28,9 +41,9 @@
             <!-- Plugin Jacoco for code coverage -->
             <plugin>
                 <!-- https://mvnrepository.com/artifact/org.jacoco/jacoco-maven-plugin -->
-                    <groupId>org.jacoco</groupId>
-                    <artifactId>jacoco-maven-plugin</artifactId>
-                    <version>0.8.6</version>
+                <groupId>org.jacoco</groupId>
+                <artifactId>jacoco-maven-plugin</artifactId>
+                <version>0.8.6</version>
                 <executions>
                     <execution>
                         <goals>
@@ -80,6 +93,12 @@
             <artifactId>junit-jupiter-api</artifactId>
             <version>5.5.2</version>
         </dependency>
+        <dependency>
+            <groupId>org.junit.vintage</groupId>
+            <artifactId>junit-vintage-engine</artifactId>
+            <version>5.5.2</version>
+            <scope>test</scope>
+        </dependency>
         <!-- Mockito dependency -->
         <dependency>
             <groupId>org.mockito</groupId>
@@ -93,6 +112,19 @@
             <version>2.2</version>
             <scope>test</scope>
         </dependency>
+        <dependency>
+            <groupId>io.cucumber</groupId>
+            <artifactId>cucumber-java</artifactId>
+            <version>${cucumber.version}</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>io.cucumber</groupId>
+            <artifactId>cucumber-junit</artifactId>
+            <version>${cucumber.version}</version>
+            <scope>test</scope>
+        </dependency>
+
     </dependencies>
 
 

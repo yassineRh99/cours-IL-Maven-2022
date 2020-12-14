@@ -1,12 +1,17 @@
 package fr.imt.coffee.storage.cupboard.container;
 
-public class Container {
+public abstract class Container {
     private double capacity;
     private boolean isEmpty;
 
     public Container(double capacity){
         this.capacity = capacity;
-        isEmpty = false;
+        isEmpty = true;
+    }
+
+    public Container(Container container){
+        this.capacity = container.getCapacity();
+        isEmpty = true;
     }
 
     public double getCapacity() {
