@@ -5,6 +5,10 @@ import io.cucumber.junit.CucumberOptions;
 import org.junit.Ignore;
 import org.junit.runner.RunWith;
 
+/**
+ * Classe qui permet de faire le lien entre le fichier "make_a_coffee.feature" et la classe implémentant les étapes
+ * de test CoffeeMachineTestFunctionalTest.java
+ */
 @RunWith(Cucumber.class)
 @CucumberOptions(
         features = {"classpath:functional/features/make_a_coffee.feature"}
