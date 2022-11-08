@@ -7,5 +7,6 @@ public enum CoffeeType {
     ARABICA,
     ROBUSTA,
     BAHIA,
-    MOKA
+    MOKA,
+    ARABICA_CREMA
 }

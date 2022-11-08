@@ -14,7 +14,7 @@ import java.util.Random;
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.is;
 
-public class CoffeeMachineTest {
+public class CoffeeMachineUnitTest {
     public CoffeeMachine coffeeMachineUnderTest;
 
     /**
@@ -23,7 +23,9 @@ public class CoffeeMachineTest {
      */
     @BeforeEach
     public void beforeTest(){
-        coffeeMachineUnderTest = new CoffeeMachine(0,10,  700);
+        coffeeMachineUnderTest = new CoffeeMachine(
+                0,10,
+                0,10,  700);
     }
 
     /**
@@ -32,7 +34,7 @@ public class CoffeeMachineTest {
     @Test
     public void testMachineFailureTrue(){
         //On créé un mock de l'objet random
-        Random randomMock = Mockito.mock(Random.class);
+        Random randomMock = Mockito.mock(Random.class, Mockito.withSettings().withoutAnnotations());
         //On vient ensuite stubber la méthode nextGaussian pour pouvoir contrôler la valeur retournée
         //ici on veut qu'elle retourne 1.0
         //when : permet de définir quand sur quelle méthode établir le stub
@@ -61,8 +63,8 @@ public class CoffeeMachineTest {
     @Test
     public void testMachineFailureFalse(){
         //On créé un mock de l'objet random
-        Random randomMock = Mockito.mock(Random.class);
-        //On vient ensuite stubber la méthode nextGaussian pour pouvoir controler la valeur retournée
+        Random randomMock = Mockito.mock(Random.class, Mockito.withSettings().withoutAnnotations());
+        //On vient ensuite stubber la méthode nextGaussian pour pouvoir contrôler la valeur retournée
         //ici on veut qu'elle retourne 0.6
         //when : permet de définir quand sur quelle méthode établir le stub
         //thenReturn : va permettre de contrôler la valeur retournée par le stub

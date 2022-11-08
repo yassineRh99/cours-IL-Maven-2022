@@ -20,7 +20,7 @@ public class FabricCupboardContainer {
     }
 
     /**
-     * Permet de crééer un contenant en fonction de la chaine de caractères passée en paramètre
+     * Permet de créer un contenant en fonction de la chaine de caractères passée en paramètre
      * @param typeContainer Type de contenant à créer
      * @param capacity Capacité en litre du contenant à créer
      * @return Le contenant désiré en fonction de la chaine de caractères passée en paramètre

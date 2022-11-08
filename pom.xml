@@ -4,7 +4,7 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>fr.imt.cours.IL-Maven-2020</groupId>
+    <groupId>fr.imt.cours.IL-Maven-2022</groupId>
     <artifactId>Main-pom</artifactId>
     <version>1.0-SNAPSHOT</version>
     <packaging>pom</packaging>
@@ -14,7 +14,7 @@
     </modules>
 
     <properties>
-        <log4j.version>2.14.0</log4j.version>
+        <log4j.version>2.19.0</log4j.version>
     </properties>
 
     <reporting>
@@ -23,6 +23,17 @@
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-javadoc-plugin</artifactId>
                 <version>3.2.0</version>
+                <configuration>
+                    <source>18</source>
+                    <failOnError>false</failOnError>
+                    <doclint>none</doclint>
+                    <javadocExecutable>${java.home}/bin/javadoc</javadocExecutable>
+                    <sourceFileExcludes>
+                        <exclude>**/test/*.java</exclude>
+                        <exclude>**MainCoffee.java</exclude>
+                    </sourceFileExcludes>
+
+                </configuration>
             </plugin>
         </plugins>
     </reporting>
@@ -48,10 +59,20 @@
                     <scmCommentPrefix>[RELEASE] </scmCommentPrefix>
                 </configuration>
             </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-site-plugin</artifactId>
+                <version>3.7.1</version>
+            </plugin>
         </plugins>
     </build>
 
     <dependencies>
+        <dependency>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-project-info-reports-plugin</artifactId>
+            <version>3.1.1</version>
+        </dependency>
         <dependency>
             <groupId>org.apache.logging.log4j</groupId>
             <artifactId>log4j-api</artifactId>

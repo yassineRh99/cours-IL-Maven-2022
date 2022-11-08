@@ -6,7 +6,6 @@ import org.junit.jupiter.api.Test;
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.is;
 
-
 public class ElectricalResistanceTest {
 
     /** Fonction permettant de calculer le temps de chauffe de l'eau attendu.
@@ -53,7 +52,7 @@ public class ElectricalResistanceTest {
         double heatingTimeActual = electricalResistance.waterHeating(waterVolume);
 
         //Assertion faite avec Hamcrest. Hamcrest permet comme JUnit de faire des assertions.
-        //Il est parfois préférer car dispose de plus de fonction d'assertion que JUnit 5 notamment sur les listes.
+        //Il est parfois préféré car Hamcrest dispose de plus de fonction d'assertion que JUnit 5 notamment sur les listes.
         //Il dispose également d'une sémantique plus explicite que JUnit
         //Hamcrest utilise des matchers, ici: is()
         assertThat(heatingTimeExpected, is(heatingTimeActual));
