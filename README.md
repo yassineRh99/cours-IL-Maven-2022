@@ -8,7 +8,7 @@
 ## Diagrammes de classes
 
 ### Package fr.imt.coffee.machine
-![Ceci est un exemple d’image](https://example.com/bild.jpg)
+![https://github.com/qperez/cours-IL-Maven-2022/raw/main/package_machine.png](https://github.com/qperez/cours-IL-Maven-2022/raw/main/package_machine.png)
 
 ### Package fr.imt.coffee.machine
-![Ceci est un exemple d’image](https://example.com/bild.jpg)
+![https://github.com/qperez/cours-IL-Maven-2022/raw/main/package_storage.png](https://github.com/qperez/cours-IL-Maven-2022/raw/main/package_storage.png)
